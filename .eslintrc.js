@@ -77,8 +77,14 @@ module.exports = {
     'no-restricted-imports': [
       'error',
       {
+        paths: [
+          {
+            name: 'lodash',
+            message: 'Please use lodash-es instead.'
+          }
+        ],
         patterns: [{
-          group: ['js/'],
+          group: ['js/*'],
           message: 'Importing from paths starting with "js/" is not allowed. Please use "../" instead.'
         }]
       }
