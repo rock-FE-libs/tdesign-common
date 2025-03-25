@@ -24,6 +24,24 @@
     overflow-y: auto;
     overflow-x: hidden;
 
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background-color: @scrollbar-color;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 6px;
+      border: 4px solid transparent;
+      background-clip: border-box;
+      background-color: transparent;
+    }
+
     &--reverse {
       display: flex;
       flex-direction: column-reverse;
@@ -230,6 +248,7 @@
 
       & &--disabled {
         background-color: @bg-color-secondarycomponent;
+        color: @bg-color-container;
       }
 
       &__stopicon {
@@ -488,7 +507,7 @@
       color: @brand-color;
     }
     & .@{prefix}-button:hover {
-      background-color: @chat-actions-hover;
+      background-color: @bg-color-secondarycontainer-hover;
     }
     & .@{prefix}-space .@{prefix}-space-item {
       height: @comp-size-xs;
