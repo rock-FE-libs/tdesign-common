@@ -1,9 +1,10 @@
 import tinyColor from 'tinycolor2';
 import { cmykInputToColor, rgb2cmyk } from './cmyk';
-import { ALPHA_FORMATS } from './constants';
+import { ALPHA_FORMAT_MAP } from './constants';
 import {
   parseGradientString, GradientColors, GradientColorPoint, isGradientColor
 } from './gradient';
+import type { AlphaConvertibleFormat, ColorFormat } from './types';
 
 export interface ColorObject {
   alpha: number;
@@ -287,10 +288,12 @@ export class Color {
     };
   }
 
-  getFormattedColor(format: string, enableAlpha: boolean) {
+  getFormattedColor(format: ColorFormat, enableAlpha: boolean) {
     if (this.isGradient) return this.linearGradient;
     const finalFormat = (
-      enableAlpha && ALPHA_FORMATS[format] ? ALPHA_FORMATS[format] : format
+      enableAlpha && format in ALPHA_FORMAT_MAP
+        ? ALPHA_FORMAT_MAP[format as AlphaConvertibleFormat]
+        : format
     ) as keyof ReturnType<Color['getFormatsColorMap']>;
     return this.getFormatsColorMap()[finalFormat];
   }
