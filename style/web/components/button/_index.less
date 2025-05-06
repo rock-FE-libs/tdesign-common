@@ -16,8 +16,12 @@
     @{attr}: @@theme-active;
   }
 
-  &.@{prefix}-is-loading {
+  &.@{prefix}-is-loading when (@ghost = true) {
     @{attr}: @@theme-default;
+  }
+
+  &.@{prefix}-is-loading when (@ghost = false) {
+    @{attr}: @@theme-disabled;
   }
 
   // ghost disabled 强制统一色
