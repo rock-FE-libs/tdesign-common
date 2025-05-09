@@ -165,7 +165,10 @@
     }
 
     &--with-icon {
-      padding: @cascader-item-padding-with-icon;
+      .@{prefix}-checkbox__label,
+      .@{prefix}-cascader__item-label {
+        margin-right: 16px;
+      }
     }
 
     &--leaf {
