@@ -28,6 +28,7 @@ const COMMON_COMP_MAP: Record<string, string[]> = {
   Loading: ['LoadingPlugin'],
   Popup: ['PopupPlugin'],
   Progress: [],
+  QRCode: [],
   Table: [],
   Tabs: ['TabPanel'],
   Tag: ['CheckTag', 'CheckTagGroup'],
