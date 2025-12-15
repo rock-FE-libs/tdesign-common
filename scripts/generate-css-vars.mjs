@@ -45,6 +45,9 @@ const FILTERED_DIR = [
   'mixins',
   'node_modules',
   'common',
+  'hooks',
+  'locale',
+  'shared'
 ];
 
 // LESS 文件路径模板
@@ -104,9 +107,9 @@ const findFilePath = (framework, componentName) => {
   if (!lessPathTemplate) {
     throw new Error(`⚠️ 未找到 framework "${framework}" 对应的路径配置`);
   }
-
   const lessPath = FRAMEWORK_BASE_PATH_MAP[framework]
     + lessPathTemplate.replace(/{COMPONENT_NAME}/g, componentName);
+
   return resolveCwd(lessPath);
 };
 
@@ -139,7 +142,7 @@ const getAllComponentName = async (framework) => {
  * @returns {string} 解析后的变量内容
  */
 const parseCssVariables = (content, parsedKeys) => {
-  const matchReg = /(?<=var)\([\s\S]*?(?=;)/g;
+  const matchReg = /(?<=var)\(([^()]*?(?:\([^()]*?\))?[^()]*)\)/g;
   const matches = content.match(matchReg);
 
   if (!matches) return '';
