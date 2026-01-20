@@ -37,7 +37,9 @@ const FRAMEWORK_BASE_PATH_MAP = {
   'Mobile(Vue)': 'src/',
   'Mobile(React)': 'src/',
   Miniprogram: 'packages/components/',
-  'Miniprogram(Chat)': 'packages/components/chat/'
+  'Miniprogram(Chat)': 'packages/components/chat/',
+  Uniapp: 'packages/uniapp-components/',
+  'Uniapp(Chat)': 'packages/uniapp-components/chat/',
 };
 
 // 需要过滤的目录名称
@@ -56,6 +58,8 @@ const LESS_FILE_MAP = {
   'Mobile(React)': '_common/style/mobile/components/{COMPONENT_NAME}/_var.less',
   Miniprogram: '{COMPONENT_NAME}/{COMPONENT_NAME}.less',
   'Miniprogram(Chat)': '{COMPONENT_NAME}/{COMPONENT_NAME}.less',
+  Uniapp: '{COMPONENT_NAME}/{COMPONENT_NAME}.less',
+  'Uniapp(Chat)': '{COMPONENT_NAME}/{COMPONENT_NAME}.less',
 };
 
 // 文档文件路径模板
@@ -64,6 +68,8 @@ const DOCS_FILE_MAP = {
   'Mobile(React)': '{COMPONENT_NAME}/{COMPONENT_NAME}',
   Miniprogram: '{COMPONENT_NAME}/README',
   'Miniprogram(Chat)': '{COMPONENT_NAME}/README',
+  Uniapp: '{COMPONENT_NAME}/README',
+  'Uniapp(Chat)': '{COMPONENT_NAME}/README',
 };
 
 /**
