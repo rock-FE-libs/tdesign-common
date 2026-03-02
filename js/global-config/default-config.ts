@@ -1,7 +1,7 @@
 export type AnimationType = 'ripple' | 'expand' | 'fade';
 
 export default {
-  classPrefix: 't',
+  classPrefix: 'hg',
   animation: {
     include: ['ripple', 'expand', 'fade'],
     exclude: [],
